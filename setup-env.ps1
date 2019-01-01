@@ -4,7 +4,7 @@ Get-ExecutionPolicy Bypass -Scope Process -Force
     "$env:USERPROFILE\source\repos",
     [System.EnvironmentVariableTarget]::User)
 
-Invoke-Expression (new-object net.webclient).downloadstring('https://get.scoop.sh')
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 scoop install concfg | Write-Host
 concfg import solarized small | Write-Host
 scoop install cmder | Write-Host
@@ -26,12 +26,12 @@ choco install spotify -y | Write-Host
 choco install dotnetcore-sdk 2.2.0 -y | Write-Host
 choco install sysinternals -y | Write-Host
 
-$gamingSoft = Read-Host "Install gaming stuff y/n?"
+$gamingSoft = Read-Host "Install gaming soft y/n?"
 if ($gamingSoft == 'y') {
     choco install steam -y | Write-Host
     choco install teamspeak -y | Write-Host
     choco install geforce-game-ready-driver -y | Write-Host
 }
 
-choco install visualstudio2017-installer
+choco install visualstudio2017-installer -y | Write-Host
 Install-WindowsUpdate -acceptEula
