@@ -32,5 +32,3 @@ if ($gamingSoft -eq 'y') {
     choco install teamspeak -y | Write-Host
     choco install geforce-game-ready-driver -y | Write-Host
 }
-
-choco install visualstudio2017-installer -y | Write-Host
